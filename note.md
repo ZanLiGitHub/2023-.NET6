@@ -1,41 +1,40 @@
-# Blazor ±Ê¼Ç
+ï»¿# Blazor ç¬”è®°
 
-## Êı¾İ¿â
-- Ìí¼ÓConnection String:  
+## æ•°æ®åº“
+- æ·»åŠ Connection String:  
 ```
-ÔÚappsettings.jsonÀïÌí¼Ó:
+åœ¨appsettings.jsonä¸­æ·»åŠ :
 "ConnectionStrings": {
-    //Á¬½Ó×Ö·û´®Ãû£ºserver·şÎñÆ÷Ãû£¬databaseÊı¾İ¿âÃû£¬trusted_connectionÊÇ·ñ°²È«
     "DefaultConnection": "server=(localdb)\MSSQLLocalDB; 
                           database=blazor;
                           trusted_connection=true",
 }
 ```
-- ´´½¨Model
+- åºŠæ¶Model
 ```
-1. ÔÚShared ProjectÖĞ´´½¨ÀàProduct.cs
+1. åœ¨Shared Projectä¸­åˆ›å»ºç±»Product.cs
 2. public class Product
    {
-       //±ê×¼Àà³ÉÔ±
+       //æ ‡å‡†ç±»æˆå‘˜
        public int Id { get; set; }
 
        //
        public string Title { get; set; } = string.Empty;
 
-       //Ö¸¶¨Ğ¡Êıµã
+       //æŒ‡å®šå°æ•°ç‚¹
        [Column(TypeName = "decimal(18,2)")]
        public decimal Price { get; set; }
    }
 ```
 - Entity Framework:  
-```C#
-1. °²×°entity framework£º`dotnet tool install --global dotnet-ef`
-2. °²×°Microsoft.EntityFrameworkCore
-3. °²×°Microsoft.EntityFrameworkCore.Design
-4. °²×°Microsoft.EntityFrameworkCore.SqlServer
-5. ÔÚProjectµÄ.csprojÎÄ¼şÖĞ²é¿´°²×°µÄPackage
-6. ÔÚProjectµÄProgram.csÖĞÌí¼Ó global using Microsoft.EntityFrameworkCore;
-7. ÔÚProjectÖĞ´´½¨ Data/DataContext.cs ´æ´¢Êı¾İ¿âÉÏÏÂÎÄ
+```
+1. å®‰è£…entity frameworkï¼š`dotnet tool install --global dotnet-ef`
+2. å®‰è£…Microsoft.EntityFrameworkCore
+3. å®‰è£…Microsoft.EntityFrameworkCore.Design
+4. å®‰è£…Microsoft.EntityFrameworkCore.SqlServer
+5. åœ¨Projectçš„.csprojæ–‡ä»¶ä¸­æŸ¥çœ‹å®‰è£…çš„Package
+6. åœ¨Projectçš„Program.csä¸­æ·»åŠ  global using Microsoft.EntityFrameworkCore;
+7. åœ¨Projectä¸­åˆ›å»º Data/DataContext.cs å­˜å‚¨æ•°æ®åº“ä¸Šä¸‹æ–‡
    namespace Blazor.Server.Data
    {
         public class DataContext : DbContext
@@ -45,11 +44,11 @@
             
             }
 
-            //Ò»¸öÊı¾İ±íTableµÄÉÏÏÂÎÄ
+            //ä¸€ä¸ªæ•°æ®è¡¨Tableçš„ä¸Šä¸‹æ–‡
             public DbSet<Product> Products { get; set; }
         }
     }
-8. ÔÚProjectµÄProgram.csÖĞÌí¼Ó 
+8. åœ¨Projectçš„Program.csä¸­æ·»åŠ  
    using Blazor.Server.Data;
    builder.Services.AddDbContext<DataContext>(options =>
    {
@@ -59,35 +58,35 @@
 ```
 - Data Migration:
 ```
-Ìí¼ÓÇ¨ÒÆ£ºdotnet ef migrations add CreateInitial
-É¾³ıÇ¨ÒÆ£ºdotnet ef migrations remove
-¸üĞÂÊı¾İ¿â£ºdotnet ef database update
+æ·»åŠ è¿ç§»ï¼šdotnet ef migrations add CreateInitial
+åˆ é™¤è¿ç§»ï¼šdotnet ef migrations remove
+æ›´æ–°æ•°æ®åº“ï¼šdotnet ef database update
 ```
 	
 
 ## Package Manger Console
-- ´ò¿ª£º
+- æ‰“å¼€Console: 
 ```
 View -> Other Windows -> Package Manager Console
 ```
-- Ö¸Áî:  
+- æŒ‡ä»¤:  
 ```
-ÇĞ»»Â·¾¶£ºcd Blazor
-ÁĞ³ö×ÓÄ¿Â¼£ºls
-°²×°£º dotnet tool install --global dotnet-ef
-Ğ¶ÔØ£º dotnet tool uninstall --global dotnet-ef
-Çå¿Õ´°¿Ú£ºcls
+åˆ‡æ¢è·¯å¾„ï¼šcd Blazor
+åˆ—å‡ºå­ç›®å½•ï¼šls
+å®‰è£…ï¼š dotnet tool install --global dotnet-ef
+å¸è½½ï¼š dotnet tool uninstall --global dotnet-ef
+æ¸…ç©ºçª—å£ï¼šcls
 ```
 
 
-## C# ¿ì½İ¼ü
-- ´úÂëÄ£°å:  
-¹¹ÔìÆ÷£º`ctor` + <kbd>TAB</kbd>¼üÁ½´Î  
-Àà³ÉÔ±£º`prop` + <kbd>TAB</kbd>¼üÁ½´Î 
+## C# å¿«æ·é”®
+- ä»£ç æ¨¡æ¿:
+æ„é€ å™¨ï¼š`ctor` + <kbd>TAB</kbd>é”®ä¸¤æ¬¡
+ç±»æˆå‘˜ï¼š`prop` + <kbd>TAB</kbd>é”®ä¸¤æ¬¡
 
 
-## VS2022 ¿ì½İ¼ü
-- <kbd>Ctrl</kbd>+<kbd>K</kbd> ×éºÏ:  
-×¢ÊÍ£º<kbd>Ctrl</kbd>+<kbd>C</kbd>  
-È¡Ïû×¢ÊÍ£º<kbd>Ctrl</kbd>+<kbd>U</kbd>  
-¸ñÊ½»¯£º<kbd>Ctrl</kbd>+<kbd>D</kbd>
+## VS2022 å¿«æ·é”®
+- <kbd>Ctrl</kbd>+<kbd>K</kbd> ç»„åˆ:  
+æ³¨é‡Š: <kbd>Ctrl</kbd>+<kbd>C</kbd>  
+å–æ¶ˆæ³¨é‡Š: <kbd>Ctrl</kbd>+<kbd>U</kbd>  
+æ ¼å¼åŒ–: <kbd>Ctrl</kbd>+<kbd>D</kbd>

@@ -1,3 +1,5 @@
+global using Blazor.Shared;
+
 using Blazor.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

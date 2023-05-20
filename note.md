@@ -10,7 +10,7 @@
                           trusted_connection=true",
 }
 ```
-- 床架Model
+- 创建Model
 ```
 1. 在Shared Project中创建类Product.cs
 2. public class Product

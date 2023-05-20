@@ -25,8 +25,10 @@
 @code {
     private static List<Product> Products = new List<Product>();
 
+    //生命周期，初始化时调用
     protected override async Task OnInitializedAsync()
     {
-        Products = await Http.GetFromJsonAsync<List<Product>>("api/Product") ?? null;
+        //从api获取数据
+        Products = await Http.GetFromJsonAsync<List<Product>>("api/Product");
     }
 }

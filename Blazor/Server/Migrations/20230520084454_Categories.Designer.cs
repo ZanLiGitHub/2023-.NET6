@@ -3,6 +3,7 @@ using Blazor.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blazor.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230520084454_Categories")]
+    partial class Categories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,12 +62,6 @@ namespace Blazor.Server.Migrations
                             Id = 3,
                             Name = "Survival",
                             Url = "survivals"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "RPG",
-                            Url = "RPGs"
                         });
                 });
 
@@ -127,33 +124,6 @@ namespace Blazor.Server.Migrations
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png",
                             Price = 9.9m,
                             Title = "Minecraft"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 2,
-                            Description = "A variety of Sims are yours to personalize, each with distinct appearances, dynamic personalities, and inspiring aspirations.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/71otyq1xFNL._AC_SY500_.jpg",
-                            Price = 9.9m,
-                            Title = "Sims4"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CategoryId = 2,
-                            Description = "Originally created by legendary game designer Sid Meier, Civilization is a turn-based strategy game in which you attempt to build an empire to stand the test of time. Explore a new land, research technology, conquer your enemies, and go head-to-head with history’s most renowned leaders as you attempt to build the greatest civilization the world has ever known.",
-                            ImageUrl = "https://image.api.playstation.com/vulcan/img/cfn/11307KFcs3gBlcheONy-ZOYZ5kplFnq5jXinUSI8HkCc8P2gdI1_32JrKJ-vxns32LjXBcQteG2EOwuzWS_KXqE5VCYFmS4Z.png",
-                            Price = 9.9m,
-                            Title = "Civilization6"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 4,
-                            Description = "Bethesda Game Studios' blockbuster open-world RPG puts players on the precipice of determining the future of Skyrim as the Empire waits for the prophesized Dragonborn to come; a hero born with the power of The Voice, and the only one who can stand amongst the dragons.",
-                            ImageUrl = "https://assets-prd.ignimgs.com/2021/08/19/elder-scrolls-skyrim-button-2017-1629409446732.jpg",
-                            Price = 9.9m,
-                            Title = "The Elder Scrolls 5: Skyrim"
                         });
                 });
 

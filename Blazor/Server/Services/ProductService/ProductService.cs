@@ -18,5 +18,21 @@
 
             return response;
         }
+
+        public async Task<ServiceResponse<Product>> GetProductAsync(int Id)
+        {
+            var response = new ServiceResponse<Product>
+            {
+                Data = await _context.Products.FindAsync(Id)
+            };
+
+            if(response.Data == null) 
+            { 
+                response.Success = false;
+                response.Message = "Product does not exist";
+            }
+
+            return response;
+        }
     }
 }

@@ -1,0 +1,9 @@
+﻿using Blazor.Shared;
+
+namespace Blazor.Server.Services.CategoryService
+{
+    public interface ICategoryService
+    {
+        Task<ServiceResponse<List<Category>>> GetCategoriesAsync();
+    }
+}

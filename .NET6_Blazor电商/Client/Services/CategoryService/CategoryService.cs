@@ -1,6 +1,5 @@
-﻿using System.Net.Http.Json;
-
-using Blazor.Shared;
+﻿using Blazor.Shared;
+using System.Net.Http.Json;
 
 namespace Blazor.Client.Services.CategoryService
 {
@@ -18,7 +17,7 @@ namespace Blazor.Client.Services.CategoryService
         public async Task GetCategories()
         {
             var result = await _httpClient.GetFromJsonAsync<ServiceResponse<List<Category>>>("api/Category");
-            if(result != null && result.Data != null) Categories = result.Data;
+            if (result != null && result.Data != null) Categories = result.Data;
         }
     }
 }

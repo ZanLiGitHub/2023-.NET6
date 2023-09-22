@@ -10,7 +10,7 @@ namespace Blazor.Server.Services.ProductService
 
         public ProductService(DataContext context)
         {
-            _context = context; 
+            _context = context;
         }
 
         public async Task<ServiceResponse<List<Product>>> GetProductAsync()
@@ -30,8 +30,8 @@ namespace Blazor.Server.Services.ProductService
                 Data = await _context.Products.FindAsync(Id)
             };
 
-            if(response.Data == null) 
-            { 
+            if (response.Data == null)
+            {
                 response.Success = false;
                 response.Message = "Product does not exist";
             }

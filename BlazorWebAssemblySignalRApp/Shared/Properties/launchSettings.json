@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BlazorWebAssemblySignalRApp.Shared": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:57589;http://localhost:57590"
+    }
+  }
+}

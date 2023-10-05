@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "杨中科.WebAPI", ".NET6_杨中科\WebAPI\杨中科.WebAPI.csproj", "{D55AF478-A522-488D-8210-5EF7C6D8277E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET6_杨中科", ".NET6_杨中科", "{EB68F2F6-23C0-45A8-ABBB-CAA88D8DBB5F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.csproj", "{D0FF6C1D-AF9C-4EC6-B5DE-E95C0A981550}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWebAssemblySignalRApp", "BlazorWebAssemblySignalRApp", "{EBE314FE-B5A3-4B28-9F1E-B80A401D398E}"
@@ -31,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D55AF478-A522-488D-8210-5EF7C6D8277E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D55AF478-A522-488D-8210-5EF7C6D8277E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D55AF478-A522-488D-8210-5EF7C6D8277E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D55AF478-A522-488D-8210-5EF7C6D8277E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0FF6C1D-AF9C-4EC6-B5DE-E95C0A981550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0FF6C1D-AF9C-4EC6-B5DE-E95C0A981550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0FF6C1D-AF9C-4EC6-B5DE-E95C0A981550}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -68,7 +60,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D55AF478-A522-488D-8210-5EF7C6D8277E} = {EB68F2F6-23C0-45A8-ABBB-CAA88D8DBB5F}
 		{503E94BB-AB51-47AC-8C32-51D5B71D7680} = {EBE314FE-B5A3-4B28-9F1E-B80A401D398E}
 		{85D241A0-B0C3-49FA-A9FF-263906CFD1B8} = {EBE314FE-B5A3-4B28-9F1E-B80A401D398E}
 		{8C0F324D-AEED-4948-B597-413D6F571ED0} = {EBE314FE-B5A3-4B28-9F1E-B80A401D398E}

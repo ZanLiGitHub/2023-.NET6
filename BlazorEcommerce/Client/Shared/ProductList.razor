@@ -77,6 +77,11 @@ else
 @code {
     protected override async Task OnInitializedAsync()
     {
-        await ProductService.GetProducts();
+        ProductService.ProductsChanges += StateHasChanged;
     } 
+
+    public void Dispose()
+    {
+        ProductService.ProductChanged -= StateHasChanged;
+    }
 }

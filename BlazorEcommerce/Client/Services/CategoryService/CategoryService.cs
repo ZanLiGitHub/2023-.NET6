@@ -10,7 +10,7 @@ namespace BlazorEcommerce.Client.Services.CategoryService
         {
             _httpClient = httpClient;
         }
-        public List<Category> Categories { get; set; }
+        public List<Category> Categories { get; set; } = new();
 
         public async Task GetCategories()
         {

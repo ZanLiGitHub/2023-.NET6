@@ -1,0 +1,97 @@
+﻿@using BlazorEcommerce.Client.Services.ProductService;
+
+@page "/product/{id:int}"
+
+@inject IProductService ProductService
+
+@if(product != null)
+{
+    <div class="media">
+        <div class="media-img-wrapper mr-2">
+            <img class="media-img" src="@product.ImageUrl" />
+        </div>
+        <div class="media-body">
+            <h2 class="mb-0">@product.Title</h2>
+            <p>@product.Description</p>
+            <h4 class="price">
+                $@product.Price
+            </h4>
+        </div>
+    </div>
+}
+else
+{
+    <h1>@message</h1>
+}
+
+<style>
+    .media {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .media-body {
+        flex: 1;
+    }
+
+    .media-img {
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 6px;
+        margin: 0 10px 10px 10px;
+        transition: transform .2s;
+    }
+
+        .media-img:hover {
+            transform: scale(1.1);
+        }
+
+    .media-img-wrapper {
+        width: 500px;
+        max-height: 500px;
+        text-align: center;
+    }
+
+    .price {
+        color: green;
+    }
+
+    @@media(max-width: 1023.98px) {
+        .media {
+            flex-direction: column;
+        }
+
+        .media-img{
+            max-width: 300px;
+        }
+
+        .media-img-wrapper {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+@code {
+    private Product? product = null;
+    private string message = string.Empty;
+
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        message = "Loading...";
+
+        var result = await ProductService.GetProduct(Id);
+
+        if (!result.Success)
+        {
+            message = result.Message;
+        }
+        else
+        {
+            product = result.Data;
+        }
+    }
+}
